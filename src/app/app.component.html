@@ -1,0 +1,50 @@
+
+<h3>APPROACH 1 : Form with @ViewChild --(ngSubmit)=onSubmit(fileUploadForm.value) </h3>
+
+<div style="background-color: ghostwhite">
+  <br/>
+<form #fileUploadForm1="ngForm" (ngSubmit)="onSubmit1(fileUploadForm1.value)" id="fileUploadForm1">
+  <div class="form-group">
+
+  <label for="randomText1">Random Text</label>
+  <input type="text" ngModel name="randomText" id="randomText1" class="form-control" required/>
+  </div>
+
+  <div class="form-group">
+
+  <label for="attachment1">Upload File</label>
+  <input type="file" #fileInput  id="attachment1" name="attachment" id="attachment" placeholder="Upload file" class="form-control" accept=".pdf,.doc,.docx" required><br/>
+  </div>
+
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</form>
+  <br/>
+</div>
+<br/>
+
+
+<h3>APPROACH 2 : Form with (change)=fileChange($event) --(ngSubmit)=onSubmit(fileUploadForm.value) </h3>
+
+<div style="background-color: ghostwhite">
+  <br/>
+<form #fileUploadForm2="ngForm" (ngSubmit)="onSubmit2(fileUploadForm2.value)" id="fileUploadForm2">
+  <div class="form-group">
+
+    <label for="randomText2">Random Text</label>
+    <input type="text" ngModel id="randomText2" name="randomText" class="form-control" required/>
+  </div>
+  <label for="attachment2">Upload File</label>
+  <input type="file" id="attachment2" (change)="fileChange($event)" class="form-control" placeholder="Upload file" accept=".pdf,.doc,.docx" required><br/>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+  <br/>
+</div>
+<br/>
+
+
